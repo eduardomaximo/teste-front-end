@@ -97,15 +97,36 @@
       "preço": 450
     },
     {
+      "nome": "IPhone",
+      "fabricado": "2021-09-08",
+      "perecível": false,
+      "validade": "",
+      "preço": "5000",
       "id": 13
     },
     {
-      "nome": "IPhone",
-      "fabricado": "2021-09-16",
+      "nome": "Martelo",
+      "fabricado": "2021-09-23",
+      "perecível": false,
+      "validade": "",
+      "preço": "40",
+      "id": 14
+    },
+    {
+      "nome": "Iphone",
+      "fabricado": "2021-09-09",
       "perecível": false,
       "validade": "",
       "preço": "4000",
-      "id": 14
+      "id": 15
+    },
+    {
+      "nome": "Arroz",
+      "fabricado": "2021-09-09",
+      "perecível": false,
+      "validade": "",
+      "preço": "20",
+      "id": 16
     }
   ]
 }

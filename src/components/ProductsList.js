@@ -6,14 +6,16 @@ const ProductsList = (props) => {
     <ul>
       {props.products.map((product) => {
         return (
-          <Product
-            key={product.id}
-            nome={product.nome}
-            fabricado={product.fabricado}
-            validade={product.validade}
-            perecível={product.perecível}
-            preço={product.preço}
-          />
+          <div>
+            <Product
+              key={product.id}
+              nome={product.nome}
+              fabricado={product.fabricado}
+              validade={product.validade}
+              perecível={product.perecível}
+              preço={product.preço}
+            />
+          </div>
         );
       })}
     </ul>
