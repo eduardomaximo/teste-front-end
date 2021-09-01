@@ -6,7 +6,7 @@
       "fabricado": "20/02/2021",
       "perecível": false,
       "validade": null,
-      "preço": 299.0
+      "preço": 299
     },
     {
       "id": 2,
@@ -14,7 +14,7 @@
       "fabricado": "20/09/2021",
       "perecível": false,
       "validade": null,
-      "preço": 799.0
+      "preço": 799
     },
     {
       "id": 3,
@@ -22,7 +22,7 @@
       "fabricado": "02/07/2021",
       "perecível": true,
       "validade": "02/10/2021",
-      "preço": 5.0
+      "preço": 5
     },
     {
       "id": 4,
@@ -95,6 +95,17 @@
       "perecível": true,
       "validade": "13/06/2021",
       "preço": 450
+    },
+    {
+      "id": 13
+    },
+    {
+      "nome": "IPhone",
+      "fabricado": "2021-09-16",
+      "perecível": false,
+      "validade": "",
+      "preço": "4000",
+      "id": 14
     }
   ]
 }
