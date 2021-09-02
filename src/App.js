@@ -27,8 +27,9 @@ function App() {
     });
 
     const data = await response.json();
-    setProducts(...products, data);
+    setProducts([...products, data]);
     console.log(products);
+    alert(`Produto ${product.nome} foi adicionado com sucesso.`);
   }
 
   const deteleMethod = {
@@ -39,8 +40,9 @@ function App() {
   };
 
   async function onDeleteHandler(props) {
+    console.log(props);
     const response = await fetch(
-      "http://localhost:8000/products" + props.products.id,
+      "http://localhost:8000/products/" + props.products.id,
       { deteleMethod }
     );
 

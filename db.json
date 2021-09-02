@@ -127,6 +127,38 @@
       "validade": "",
       "preço": "20",
       "id": 16
+    },
+    {
+      "nome": "IPhone",
+      "fabricado": "2021-09-09",
+      "perecível": false,
+      "validade": "",
+      "preço": "2000",
+      "id": 17
+    },
+    {
+      "nome": "IPhone",
+      "fabricado": "2021-09-15",
+      "perecível": false,
+      "validade": "2021-08-31",
+      "preço": "2000",
+      "id": 18
+    },
+    {
+      "nome": "Arroz",
+      "fabricado": "2021-09-08",
+      "perecível": true,
+      "validade": "2021-09-22",
+      "preço": "5",
+      "id": 19
+    },
+    {
+      "nome": "Martelo",
+      "fabricado": "",
+      "perecível": false,
+      "validade": "",
+      "preço": "",
+      "id": 20
     }
   ]
 }
