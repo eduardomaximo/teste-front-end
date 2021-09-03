@@ -1,4 +1,5 @@
 import React from "react";
+import EditProduct from "./EditProduct";
 import Product from "./Product";
 import RemoveProduct from "./RemoveProduct";
 
@@ -15,7 +16,14 @@ const ProductsList = (props) => {
               validade={product.validade}
               perecível={product.perecível}
               preço={product.preço}
-              onDelete={product.onDelete}
+            />
+            <EditProduct
+              id={product.id}
+              nome={product.nome}
+              fabricado={product.fabricado}
+              validade={product.validade}
+              perecível={product.perecível}
+              preço={product.preço}
             />
             <RemoveProduct
               idToRemove={product.id}
