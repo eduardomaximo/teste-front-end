@@ -12,7 +12,7 @@ const NewProduct = (props) => {
 
     //adicionar validação depois
 
-    const product = {
+    const newProduct = {
       nome: nomeRef.current.value,
       fabricado: fabricadoRef.current.value,
       perecível: perecívelRef.current.value === "sim" ? true : false,
@@ -20,7 +20,7 @@ const NewProduct = (props) => {
       preço: preçoRef.current.value,
     };
 
-    props.onNewProduct(product);
+    props.onNewProduct(newProduct);
   }
 
   return (

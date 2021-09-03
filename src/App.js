@@ -13,14 +13,13 @@ function App() {
       })
       .then((data) => {
         setProducts(data);
-        console.log(data);
       });
   }, []);
 
-  async function onNewProductHandler(product) {
+  async function onNewProductHandler(newProduct) {
     const response = await fetch("http://localhost:8000/products", {
       method: "POST",
-      body: JSON.stringify(product),
+      body: JSON.stringify(newProduct),
       headers: {
         "Content-Type": "application/json",
       },
@@ -28,54 +27,13 @@ function App() {
 
     const data = await response.json();
     setProducts([...products, data]);
-    console.log(products);
-    alert(`Produto ${product.nome} foi adicionado com sucesso.`);
-  }
-
-  const deteleMethod = {
-    method: "DELETE",
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
-
-  async function onDeleteHandler(props) {
-    console.log(props);
-    const response = await fetch(
-      "http://localhost:8000/products/" + props.products.id,
-      { deteleMethod }
-    );
-
-    const data = await response.json();
-    console.log(data);
-  }
-
-  async function onEditHandler(props) {
-    const response = await fetch(
-      "http://localhost:8000/products/" + props.products.id,
-      {
-        method: "PUT",
-        body: JSON.stringify(),
-        headers: {
-          "Content-Type": "application/json",
-        },
-      }
-    );
-
-    const data = await response.json();
-    console.log(data);
+    alert(`Produto ${newProduct.nome} foi adicionado com sucesso.`);
   }
 
   return (
     <div className="App">
       <NewProduct onNewProduct={onNewProductHandler} />
-      {products && (
-        <ProductsList
-          products={products}
-          onDelete={onDeleteHandler}
-          onEdit={onEditHandler}
-        />
-      )}
+      {products && <ProductsList products={products} />}
     </div>
   );
 }

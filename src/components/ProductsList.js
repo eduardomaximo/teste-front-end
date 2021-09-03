@@ -1,20 +1,25 @@
 import React from "react";
 import Product from "./Product";
+import RemoveProduct from "./RemoveProduct";
 
 const ProductsList = (props) => {
-  console.log(props);
   return (
     <ul>
       {props.products.map((product) => {
         return (
-          <div>
+          <div key={product.id}>
             <Product
-              key={product.id}
+              id={product.id}
               nome={product.nome}
               fabricado={product.fabricado}
               validade={product.validade}
               perecível={product.perecível}
               preço={product.preço}
+              onDelete={product.onDelete}
+            />
+            <RemoveProduct
+              idToRemove={product.id}
+              nameToRemove={product.nome}
             />
           </div>
         );
