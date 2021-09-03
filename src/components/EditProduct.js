@@ -28,10 +28,6 @@ const EditProduct = (props) => {
       },
       body: JSON.stringify(editedProduct),
     });
-
-    console.log("event", event);
-    console.log("editedProduct", editedProduct);
-
     setIsEditing(false);
   };
 

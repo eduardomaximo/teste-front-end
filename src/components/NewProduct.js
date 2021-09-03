@@ -35,8 +35,10 @@ const NewProduct = (props) => {
           <option value="não">Não</option>
           <option value="sim">Sim</option>
         </select>
-        <label htmlFor="val">Data de Validade</label>
-        <input id="val" type="date" ref={validadeRef} />
+        <div>
+          <label htmlFor="val">Data de Validade</label>
+          <input id="val" type="date" ref={validadeRef} />
+        </div>
         <label htmlFor="preço">Preço</label>
         <input id="preço" type="number" ref={preçoRef} />
         <button>Adicionar Produto</button>
