@@ -21,7 +21,7 @@ const LoginForm = () => {
       user.username === "teste@email.com" &&
       user.password === "senhadeteste"
     ) {
-      alert("Logged in succesfully");
+      alert("Logged in successfully");
       dispatch(login());
       console.log("isLoggedIn?", loginStatus);
     } else {
@@ -29,25 +29,34 @@ const LoginForm = () => {
     }
   };
 
+  const logoutHandler = () => {
+    alert("Logged out successfully.");
+    dispatch(logout());
+  };
+
   return (
     <div>
-      <form>
-        <label htmlFor="email">E-Mail</label>
-        <input
-          type="email"
-          id="email"
-          defaultValue="teste@email.com"
-          ref={usernameRef}
-        />
-        <label htmlFor="password">Password</label>
-        <input
-          type="password"
-          id="password"
-          defaultValue="senhadeteste"
-          ref={passwordRef}
-        />
-        <button onClick={loginHandler}>Enter</button>
-      </form>
+      {!loginStatus && (
+        <form>
+          <label htmlFor="email">E-Mail</label>
+          <input
+            type="email"
+            id="email"
+            defaultValue="teste@email.com"
+            ref={usernameRef}
+          />
+          <label htmlFor="password">Password</label>
+          <input
+            type="password"
+            id="password"
+            defaultValue="senhadeteste"
+            ref={passwordRef}
+          />
+          <button onClick={loginHandler}>Enter</button>
+        </form>
+      )}
+
+      {loginStatus && <button onClick={logoutHandler}>Logout</button>}
     </div>
   );
 };

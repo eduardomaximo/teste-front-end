@@ -39,8 +39,7 @@ function App() {
 
   return (
     <div>
-      {!loginStatus && <LoginForm />}
-
+      <LoginForm />
       {loginStatus && <NewProduct onNewProduct={onNewProductHandler} />}
       {products && loginStatus && (
         <ProductsList
