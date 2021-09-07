@@ -11,23 +11,25 @@ const ProductsList = (props) => {
           <div key={product.id}>
             <Product
               id={product.id}
-              nome={product.nome}
-              fabricado={product.fabricado}
-              validade={product.validade}
-              perecível={product.perecível}
-              preço={product.preço}
+              name={product.name}
+              fabricationDate={product.fabricationDate}
+              goodThrough={product.goodThrough}
+              perishable={product.perishable}
+              price={product.price}
             />
             <EditProduct
               id={product.id}
-              nome={product.nome}
-              fabricado={product.fabricado}
-              validade={product.validade}
-              perecível={product.perecível}
-              preço={product.preço}
+              name={product.name}
+              fabricationDate={product.fabricationDate}
+              goodThrough={product.goodThrough}
+              perishable={product.perishable}
+              price={product.price}
+              setUpdateProducts={props.setUpdateProducts}
             />
             <RemoveProduct
               idToRemove={product.id}
-              nameToRemove={product.nome}
+              nameToRemove={product.name}
+              setUpdateProducts={props.setUpdateProducts}
             />
           </div>
         );

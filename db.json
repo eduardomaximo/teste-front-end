@@ -1,36 +1,20 @@
 {
   "products": [
     {
-      "nome": "Taco de Golfe",
-      "fabricado": "2021-09-17",
-      "perecível": false,
-      "validade": "2024-03-07",
-      "preço": "99",
+      "name": "Banana",
+      "fabricationDate": "2021-09-10",
+      "perishable": false,
+      "goodThrough": "2021-10-02",
+      "price": "255",
       "id": 1
     },
     {
-      "nome": "Lâmpada",
-      "fabricado": "2021-10-20",
-      "perecível": false,
-      "validade": "2024-03-07",
-      "preço": "30",
+      "name": "Beets",
+      "fabricationDate": "2021-09-09",
+      "perishable": true,
+      "goodThrough": "2021-09-17",
+      "price": "2500",
       "id": 2
-    },
-    {
-      "nome": "IPhone",
-      "fabricado": "2021-09-21",
-      "perecível": false,
-      "validade": "",
-      "preço": "500",
-      "id": 3
-    },
-    {
-      "nome": "Ovo de Páscoa",
-      "fabricado": "2021-09-08",
-      "perecível": true,
-      "validade": "2021-10-20",
-      "preço": "250",
-      "id": 4
     }
   ]
 }

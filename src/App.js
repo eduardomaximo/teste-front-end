@@ -5,6 +5,7 @@ import ProductsList from "./components/ProductsList";
 
 function App() {
   const [products, setProducts] = useState(null);
+  const [updateProducts, setUpdateProducts] = useState(true);
 
   useEffect(() => {
     fetch("http://localhost:8000/products")
@@ -12,9 +13,12 @@ function App() {
         return response.json();
       })
       .then((data) => {
-        setProducts(data);
+        setProducts([...data]);
       });
-  }, []);
+    setUpdateProducts(false);
+  }, [updateProducts]);
+
+  console.log(products);
 
   async function onNewProductHandler(newProduct) {
     const response = await fetch("http://localhost:8000/products", {
@@ -27,13 +31,19 @@ function App() {
 
     const data = await response.json();
     setProducts([...products, data]);
-    alert(`Produto ${newProduct.nome} foi adicionado com sucesso.`);
+    setUpdateProducts(true);
+    alert(`Produto ${newProduct.name} foi adicionado com sucesso.`);
   }
 
   return (
     <div className="App">
       <NewProduct onNewProduct={onNewProductHandler} />
-      {products && <ProductsList products={products} />}
+      {products && (
+        <ProductsList
+          products={products}
+          setUpdateProducts={setUpdateProducts}
+        />
+      )}
     </div>
   );
 }

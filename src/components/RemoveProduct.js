@@ -12,6 +12,7 @@ const RemoveProduct = (props) => {
     });
 
     alert(`${props.nameToRemove} was removed successfully.`);
+    props.setUpdateProducts(true);
   };
 
   return (

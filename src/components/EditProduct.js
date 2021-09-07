@@ -3,11 +3,11 @@ import React, { useState, useRef } from "react";
 const EditProduct = (props) => {
   const [isEditing, setIsEditing] = useState(false);
 
-  const nomeRef = useRef("");
-  const fabricadoRef = useRef("");
-  const perecívelRef = useRef("");
-  const validadeRef = useRef("");
-  const preçoRef = useRef("");
+  const nameRef = useRef("");
+  const fabricationDateRef = useRef("");
+  const perishableRef = useRef("");
+  const goodThroughRef = useRef("");
+  const priceRef = useRef("");
 
   const url = "http://localhost:8000/products";
 
@@ -15,11 +15,11 @@ const EditProduct = (props) => {
     event.preventDefault();
 
     const editedProduct = {
-      nome: nomeRef.current.value,
-      fabricado: fabricadoRef.current.value,
-      perecível: perecívelRef.current.value === "sim" ? true : false,
-      validade: validadeRef.current.value,
-      preço: preçoRef.current.value,
+      name: nameRef.current.value,
+      fabricationDate: fabricationDateRef.current.value,
+      perishable: perishableRef.current.value === "sim" ? true : false,
+      goodThrough: goodThroughRef.current.value,
+      price: priceRef.current.value,
     };
     fetch(url + "/" + props.id, {
       method: "PUT",
@@ -29,6 +29,7 @@ const EditProduct = (props) => {
       body: JSON.stringify(editedProduct),
     });
     setIsEditing(false);
+    props.setUpdateProducts(true);
   };
 
   return (
@@ -36,42 +37,42 @@ const EditProduct = (props) => {
       <div>
         {isEditing && (
           <form onSubmit={editProductHandler}>
-            <label htmlFor="nome">Nome</label>
+            <label htmlFor="name">Nome</label>
             <input
-              id="nome"
+              id="name"
               type="text"
-              defaultValue={props.nome}
-              ref={nomeRef}
+              defaultValue={props.name}
+              ref={nameRef}
             />
-            <label htmlFor="fab">Data de Fabricação</label>
+            <label htmlFor="fabricationDate">Data de Fabricação</label>
             <input
-              id="fab"
+              id="fabricationDate"
               type="date"
-              defaultValue={props.fabricado}
-              ref={fabricadoRef}
+              defaultValue={props.fabricationDate}
+              ref={fabricationDateRef}
             />
             <label htmlFor="select">Produto Perecível:</label>
             <select
               name="select"
-              defaultValue={props.perecível}
-              ref={perecívelRef}
+              defaultValue={props.perishable}
+              ref={perishableRef}
             >
               <option value="não">Não</option>
               <option value="sim">Sim</option>
             </select>
-            <label htmlFor="val">Data de Validade</label>
+            <label htmlFor="goodThrough">Data de Validade</label>
             <input
-              id="val"
+              id="goodThrough"
               type="date"
-              defaultValue={props.validade}
-              ref={validadeRef}
+              defaultValue={props.goodThrough}
+              ref={goodThroughRef}
             />
-            <label htmlFor="preço">Preço</label>
+            <label htmlFor="price">Preço</label>
             <input
-              id="preço"
+              id="price"
               type="number"
-              defaultValue={props.preço}
-              ref={preçoRef}
+              defaultValue={props.price}
+              ref={priceRef}
             />
             <button onClick={() => setIsEditing(false)}>Cancelar</button>
             <button>Salvar</button>
