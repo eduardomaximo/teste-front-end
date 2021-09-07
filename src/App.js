@@ -3,9 +3,13 @@ import "./App.css";
 import NewProduct from "./components/NewProduct";
 import ProductsList from "./components/ProductsList";
 
+import { useSelector } from "react-redux";
+import LoginForm from "./components/LoginForm";
+
 function App() {
   const [products, setProducts] = useState(null);
   const [updateProducts, setUpdateProducts] = useState(true);
+  const loginStatus = useSelector((state) => state.login.isLoggedIn);
 
   useEffect(() => {
     fetch("http://localhost:8000/products")
@@ -17,8 +21,6 @@ function App() {
       });
     setUpdateProducts(false);
   }, [updateProducts]);
-
-  console.log(products);
 
   async function onNewProductHandler(newProduct) {
     const response = await fetch("http://localhost:8000/products", {
@@ -36,9 +38,11 @@ function App() {
   }
 
   return (
-    <div className="App">
-      <NewProduct onNewProduct={onNewProductHandler} />
-      {products && (
+    <div>
+      {!loginStatus && <LoginForm />}
+
+      {loginStatus && <NewProduct onNewProduct={onNewProductHandler} />}
+      {products && loginStatus && (
         <ProductsList
           products={products}
           setUpdateProducts={setUpdateProducts}
