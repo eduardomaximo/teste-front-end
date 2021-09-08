@@ -7,6 +7,22 @@
       "goodThrough": "2021-09-25",
       "price": "95",
       "id": 1
+    },
+    {
+      "name": "Strawberry",
+      "fabricationDate": "2021-09-15",
+      "perishable": false,
+      "goodThrough": "2021-09-10",
+      "price": "4",
+      "id": 2
+    },
+    {
+      "name": "Banana",
+      "fabricationDate": "2021-09-01",
+      "perishable": true,
+      "goodThrough": "2021-09-16",
+      "price": "10",
+      "id": 3
     }
   ]
 }
