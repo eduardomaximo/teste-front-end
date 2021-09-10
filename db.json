@@ -3,9 +3,9 @@
     {
       "name": "Beets",
       "fabricationDate": "2021-09-07",
-      "perishable": true,
+      "perishable": false,
       "goodThrough": "2021-09-25",
-      "price": "95",
+      "price": "90",
       "id": 1
     },
     {

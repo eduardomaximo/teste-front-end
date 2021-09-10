@@ -5,10 +5,12 @@ import ProductsList from "./components/ProductsList";
 
 import { useSelector } from "react-redux";
 import LoginForm from "./components/LoginForm";
+import SortBy from "./components/SortBy";
 
 function App() {
   const [products, setProducts] = useState(null);
   const [updateProducts, setUpdateProducts] = useState(true);
+
   const loginStatus = useSelector((state) => state.login.isLoggedIn);
 
   useEffect(() => {
@@ -34,13 +36,14 @@ function App() {
     const data = await response.json();
     setProducts([...products, data]);
     setUpdateProducts(true);
-    alert(`Produto ${newProduct.name} foi adicionado com sucesso.`);
+    alert(`Produtc ${newProduct.name} added.`);
   }
 
   return (
     <div>
       <LoginForm />
       {loginStatus && <NewProduct onNewProduct={onNewProductHandler} />}
+      {loginStatus && <SortBy />}
       {products && loginStatus && (
         <ProductsList
           products={products}
