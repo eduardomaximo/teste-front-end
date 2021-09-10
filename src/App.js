@@ -36,7 +36,7 @@ function App() {
     const data = await response.json();
     setProducts([...products, data]);
     setUpdateProducts(true);
-    alert(`Produtc ${newProduct.name} added.`);
+    alert(`Product ${newProduct.name} added.`);
   }
 
   return (

@@ -23,7 +23,6 @@ const LoginForm = () => {
     ) {
       alert("Logged in successfully");
       dispatch(login());
-      console.log("isLoggedIn?", loginStatus);
     } else {
       alert("Username or password incorret.");
     }
