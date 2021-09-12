@@ -11,7 +11,8 @@ function App() {
   const [products, setProducts] = useState(null);
   const [updateProducts, setUpdateProducts] = useState(true);
 
-  const loginStatus = useSelector((state) => state.login.isLoggedIn);
+  // const loginStatus = useSelector((state) => state.login.isLoggedIn);
+  const loginStatus = !!localStorage.getItem("token");
 
   useEffect(() => {
     fetch("http://localhost:8000/products")
@@ -22,7 +23,7 @@ function App() {
         setProducts([...data]);
       });
     setUpdateProducts(false);
-  }, [updateProducts]);
+  }, [updateProducts, loginStatus]);
 
   async function onNewProductHandler(newProduct) {
     const response = await fetch("http://localhost:8000/products", {

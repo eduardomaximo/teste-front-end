@@ -30,7 +30,7 @@ export const nonperishable = () => ({
 });
 
 const initialState = {
-  sortBy: null,
+  sortBy: "name",
 };
 
 export default (state = initialState, action) => {
