@@ -31,6 +31,14 @@
       "goodThrough": "2021-09-30",
       "price": "25",
       "id": 4
+    },
+    {
+      "name": "Egg",
+      "fabricationDate": "2021-09-12",
+      "perishable": true,
+      "goodThrough": "2021-09-29",
+      "price": "20",
+      "id": 5
     }
   ]
 }
